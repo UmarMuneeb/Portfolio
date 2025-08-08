@@ -14,6 +14,7 @@ export function OrbitingCircles({
   speed = 1,
   ...props
 }) {
+  
   const calculatedDuration = duration / speed;
   return (
     <>
