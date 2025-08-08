@@ -2,6 +2,7 @@ import React from 'react'
 import { useScroll,motion,useTransform, useSpring } from 'motion/react'
 
 const ParallexBackground = () => {
+  const base = import.meta.env.BASE_URL;
   const {scrollYProgress} = useScroll();
   const x=useSpring(scrollYProgress,{damping:50});
   const mountain3Y=useTransform(x,[0,0.5],['0%','70%'])
@@ -15,7 +16,7 @@ const ParallexBackground = () => {
             {/* sky */}
             <div className=' absolute inset-0 w-full h-screen -z-50'
                 style={{
-                    backgroundImage:"url('/assets/sky.jpg')",
+                    backgroundImage:`url(${base}assets/sky.jpg)`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'bottom',
                     
@@ -25,7 +26,7 @@ const ParallexBackground = () => {
             <motion.div
               className='absolute inset-0 -z-40'
               style={{
-                    backgroundImage:"url('/assets/mountain-3.png')",
+                    backgroundImage:`url('${base}/assets/mountain-3.png')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'bottom',
                     y: mountain3Y,
@@ -35,7 +36,7 @@ const ParallexBackground = () => {
             <motion.div
               className='absolute inset-0 -z-30'
               style={{
-                    backgroundImage:"url('/assets/planet.png')",
+                    backgroundImage:`url('${base}/assets/planet.png')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'bottom',
                     x: planetsX,
@@ -45,7 +46,7 @@ const ParallexBackground = () => {
             <motion.div
               className='absolute inset-0 -z-20'
               style={{
-                    backgroundImage:"url('/assets/mountain-2.png')",
+                    backgroundImage:`url('${base}/assets/mountain-2.png')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'bottom',
                     y: mountain2Y,
@@ -54,7 +55,7 @@ const ParallexBackground = () => {
             <motion.div
               className='absolute inset-0 -z-10'
               style={{
-                    backgroundImage:"url('/assets/mountain-1.png')",
+                    backgroundImage:`url('${base}/assets/mountain-1.png')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'bottom',
                     y: mountain1Y,
